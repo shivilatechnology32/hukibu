@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "1095020102252",
+    "project_id": "hukibu-322e6",
+    "storage_bucket": "hukibu-322e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095020102252:android:6260d275e90e9942f44e49",
+        "android_client_info": {
+          "package_name": "com.example.hukibu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095020102252-ah42cpb6os3nqk0rgqqkj86bb89lfllh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hukibu",
+            "certificate_hash": "d5a1c0955c1fb962937ba176fc3d824f54755ff5"
+          }
+        },
+        {
+          "client_id": "1095020102252-gb211bosgl4vaamkvbrr3sf9juoahgqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hukibu",
+            "certificate_hash": "4d01843afc9f986c95a6255fce77933ef00b220f"
+          }
+        },
+        {
+          "client_id": "1095020102252-skkumudhkknoc54g671pqvl38jn5902i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hukibu",
+            "certificate_hash": "289791deb43828846068c1349a16e3a193cf4659"
+          }
+        },
+        {
+          "client_id": "1095020102252-68nclec48eeq0sqaobmdh35a5mp41cbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwP7nXu2tVSt38AE45qpeqWs-52BpUojo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095020102252-68nclec48eeq0sqaobmdh35a5mp41cbp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1095020102252-d9oqpu54ejafd0m2dv5lk24haio6c194.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hukibu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
