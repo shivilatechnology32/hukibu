@@ -4,9 +4,29 @@ class UserModel {
   String? username;
   String? phonenumber;
   String? image;
+  String? dad;
+  String? age;
+  String? gender;
+  String? area;
+  String? education;
+  String? job;
+  String? vocation;
 
   UserModel(
-      {this.uid, this.email, this.username, this.phonenumber, this.image});
+      {
+        this.uid,
+        this.email,
+        this.username,
+        this.phonenumber,
+        this.image,
+        this.dad,
+        this.age,
+        this.gender,
+        this.area,
+        this.education,
+        this.job,
+        this.vocation,
+      });
 
   factory UserModel.fromMap(map) {
     return UserModel(

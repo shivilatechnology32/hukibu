@@ -1,7 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hukibu">
+    <queries>
+        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+        <provider android:authorities="com.facebook.orca.provider.PlatformProvider" />
+    </queries>
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET">
+
+    </uses-permission>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
    <application
         android:label="hukibu"
@@ -33,5 +39,10 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <meta-data
+           android:name="com.facebook.sdk.ClientToken"
+           android:value=""/>
+       <meta-data android:name="com.facebook.sdk.ApplicationId"
+           android:value=""/>
     </application>
 </manifest>

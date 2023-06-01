@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:hukibu/Screen/login_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:hukibu/Screen/auth_screen/email_auth/login_screen.dart';
+import 'package:hukibu/routes/route_paths.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-class OnbordingScreen extends StatefulWidget {
-  const OnbordingScreen({super.key});
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
 
   @override
-  State<OnbordingScreen> createState() => _OnbordingScreenState();
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
-class _OnbordingScreenState extends State<OnbordingScreen> {
-  final introKey = GlobalKey<IntroductionScreenState>();
-
-  void _onIntroEnd(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-          builder: (_) => const Login_Screen(
-                restorationId: 'main',
-              )),
-    );
-  }
+class _OnboardingScreenState extends State<OnboardingScreen> {
 
   Widget _buildImage(String assetName, [double width = 350]) {
     return Image.asset('assets/images/$assetName', width: width);
@@ -39,7 +32,7 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
 
     return SafeArea(
       child: IntroductionScreen(
-        key: introKey,
+        // key: introKey,
         globalBackgroundColor: Colors.white,
         allowImplicitScrolling: true,
         autoScrollDuration: 3000,
@@ -48,37 +41,38 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.only(top: 16, right: 16),
-              // child: _buildImage('img1.png', 100),
             ),
           ),
         ),
-        globalFooter: SizedBox(
+        globalFooter: Container(
           width: 300,
           height: 52,
+          margin: EdgeInsets.only(bottom: 10.h),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 103, 43, 215),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30))),
+              backgroundColor: const Color.fromARGB(255, 103, 43, 215),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
             onPressed: () {
-              _onIntroEnd(context);
+              Get.offAllNamed(RoutePaths.loginScreen);
             },
             child: Row(
               mainAxisSize: MainAxisSize.min,
-              children: const [
+              children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 80.0),
-                  child: Text('Get Started'),
-                ), // <-- Text
+                  padding: EdgeInsets.only(left: 80.w),
+                  child: const Text('Get Started'),
+                ),
                 SizedBox(
-                  width: 5,
+                  width: 5.w,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 70.0),
+                  padding: EdgeInsets.only(left: 60.w),
                   child: Icon(
-                    // <-- Icon
                     Icons.arrow_forward,
-                    size: 24.0,
+                    size: 20.h,
                   ),
                 ),
               ],

@@ -3,14 +3,12 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hukibu/Screen/add_new_child.dart';
-import 'package:hukibu/Screen/login_screen.dart';
+import 'package:hukibu/Screen/auth_screen/email_auth/login_screen.dart';
 import 'package:hukibu/Screen/pdf_viewer_screen.dart';
-import 'package:hukibu/Screen/profile_screen.dart';
+import 'package:hukibu/Screen/auth_screen/set_up_profile/profile_screen.dart';
 import 'package:image_picker/image_picker.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -27,13 +25,14 @@ class _SettingScreenState extends State<SettingScreen> {
   final currentUser = FirebaseAuth.instance;
   File? _image;
   String? imageURL;
+  String? userImage;
+
   final picker = ImagePicker();
   String? name;
   final fireStore =
       FirebaseFirestore.instance.collection('New Child').snapshots();
 
   Future getImageFromGallery() async {
-    // ignore: deprecated_member_use
     final pickedFile = await picker.getImage(source: ImageSource.gallery);
 
     setState(() {
@@ -48,6 +47,10 @@ class _SettingScreenState extends State<SettingScreen> {
     ref.getDownloadURL().then((value) async {
       setState(() {
         imageURL = value;
+        FirebaseFirestore.instance
+            .collection("UserData")
+            .doc(FirebaseAuth.instance.currentUser!.uid)
+            .update({'image': imageURL});
       });
     });
   }
@@ -85,6 +88,7 @@ class _SettingScreenState extends State<SettingScreen> {
         setState(() {
           username = snapshot.data()!['username'];
           phonenumber = snapshot.data()!['phonenumber'];
+          userImage = snapshot.data()!['image'];
         });
       } else {
         setState(() {
@@ -118,37 +122,38 @@ class _SettingScreenState extends State<SettingScreen> {
         elevation: 0,
         actions: [
           Padding(
-              padding: const EdgeInsets.only(right: 10, top: 5),
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      elevation: 0, backgroundColor: Colors.white),
-                  onPressed: () {
-                    FirebaseAuth.instance.signOut();
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (ctx) => const Login_Screen(
-                                  restorationId: 'main',
-                                )),
-                        (route) => false);
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        "logout",
-                        style: TextStyle(fontSize: 15, color: Colors.blue),
-                      ).tr(),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Icon(
-                        Icons.logout,
-                        size: 18,
-                        color: Colors.blue,
-                      )
-                    ],
-                  ))),
+            padding: const EdgeInsets.only(right: 10, top: 5),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  elevation: 0, backgroundColor: Colors.white),
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => LoginScreen(),
+                    ),
+                    (route) => false);
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const Text(
+                    "logout",
+                    style: TextStyle(fontSize: 15, color: Colors.blue),
+                  ).tr(),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Icon(
+                    Icons.logout,
+                    size: 18,
+                    color: Colors.blue,
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
       ),
       body: Padding(
@@ -165,38 +170,23 @@ class _SettingScreenState extends State<SettingScreen> {
                     width: 15,
                   ),
                   InkWell(
-                      onTap: () async {
-                        showModalBottomSheet(
-                            context: context,
-                            builder: (builder) => BottomSheet());
-                        //print('upload pic');
-                        // Navigator.pop(context);
-                        firebase_storage.Reference ref = firebase_storage
-                            .FirebaseStorage.instance
-                            .ref('/profile');
-
-                        //print('uplaod profile');
-                        firebase_storage.UploadTask uploadTask =
-                            ref.putFile(_image!.absolute);
-                        Navigator.pop(context);
-                        Future.value(uploadTask).then((value) {
-                          // ignore: unused_local_variable
-                          var newUrl = ref.getDownloadURL();
-
-                          // databaseRef
-                          //     .child('1')
-                          //     .set({'id': '1212', 'title': newUrl.toString()});
-
-                          Fluttertoast.showToast(msg: 'Uploaded');
-                        }).onError((error, stackTrace) {
-                          Fluttertoast.showToast(msg: 'Image Was Not Uploaded');
-                        });
-                      },
-                      child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor:
-                              const Color.fromARGB(255, 239, 238, 235),
-                          child: _image != null
+                    onTap: () async {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (builder) => BottomSheet());
+                    },
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundColor: const Color.fromARGB(255, 239, 238, 235),
+                      child: userImage != null
+                          ? ClipOval(
+                              child: Image.network(
+                                userImage!,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          : _image != null
                               ? ClipOval(
                                   child: Image.file(
                                     _image!,
@@ -207,8 +197,9 @@ class _SettingScreenState extends State<SettingScreen> {
                               : ClipOval(
                                   child:
                                       Image.asset('assets/images/empty.webp'),
-                                ))
                                 ),
+                    ),
+                  ),
                   const SizedBox(
                     width: 15,
                   ),
@@ -280,9 +271,11 @@ class _SettingScreenState extends State<SettingScreen> {
                 InkWell(
                   onTap: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (ctx) => const AddNewChild()));
+                      context,
+                      MaterialPageRoute(
+                        builder: (ctx) => const AddNewChild(),
+                      ),
+                    );
                   },
                   child: SizedBox(
                     child: Row(
@@ -313,7 +306,7 @@ class _SettingScreenState extends State<SettingScreen> {
             ),
             StreamBuilder<QuerySnapshot>(
                 stream: fireStore,
-                builder: (BuildContext contex,
+                builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const CircularProgressIndicator();
@@ -353,46 +346,58 @@ class _SettingScreenState extends State<SettingScreen> {
                                           TextButton(
                                               onPressed: () {
                                                 Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            PdfViewerScreen(
-                                                              url: snapshot
-                                                                  .data!
-                                                                  .docs[index]
-                                                                      ['pdf']
-                                                                  .toString(),
-                                                            )));
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        PdfViewerScreen(
+                                                      url: snapshot.data!
+                                                          .docs[index]['pdf']
+                                                          .toString(),
+                                                    ),
+                                                  ),
+                                                );
                                               },
                                               child: const Text('PDF'))
                                         ],
                                       ),
-                                      leading: Text(snapshot
-                                          .data!.docs[index]['name']
-                                          .toString()),
+                                      leading: Text(
+                                        snapshot.data!.docs[index]['name']
+                                            .toString(),
+                                      ),
                                       trailing: CircleAvatar(
                                         radius: 30,
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(30),
-                                          child: Image(
-                                            fit: BoxFit.cover,
-                                            width: 80,
-                                            image: NetworkImage(snapshot
-                                                .data!.docs[index]['image']
-                                                .toString()),
-                                            loadingBuilder: (context, child,
-                                                loadingProgress) {
-                                              if (loadingProgress == null) {
-                                                return child;
-                                              }
-                                              return const Center(
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                color: Colors.black,
-                                              ));
-                                            },
-                                          ),
+                                          child: snapshot.data!
+                                                      .docs[index]['image']
+                                                      .toString() !=
+                                                  'null'
+                                              ? Image(
+                                                  fit: BoxFit.cover,
+                                                  width: 80,
+                                                  image: NetworkImage(
+                                                    snapshot.data!
+                                                        .docs[index]['image']
+                                                        .toString(),
+                                                  ),
+                                                  loadingBuilder: (context,
+                                                      child, loadingProgress) {
+                                                    if (loadingProgress ==
+                                                        null) {
+                                                      return child;
+                                                    }
+                                                    return const Center(
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                      color: Colors.black,
+                                                    ));
+                                                  },
+                                                )
+                                              : ClipOval(
+                                                  child: Image.asset(
+                                                      'assets/images/empty.webp'),
+                                                ),
                                         ),
                                       ),
                                     ),

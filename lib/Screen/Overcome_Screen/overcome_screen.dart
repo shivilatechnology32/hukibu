@@ -95,8 +95,9 @@ class _OverComeScreenState extends State<OverComeScreen>
                           height: MediaQuery.of(context).size.height / 18,
                           width: MediaQuery.of(context).size.width / 3,
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 2, 215, 112),
-                              borderRadius: BorderRadius.circular(20)),
+                            color: const Color.fromARGB(255, 2, 215, 112),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -127,7 +128,8 @@ class _OverComeScreenState extends State<OverComeScreen>
                             width: MediaQuery.of(context).size.width / 5,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -149,7 +151,8 @@ class _OverComeScreenState extends State<OverComeScreen>
                             width: MediaQuery.of(context).size.width / 4.5,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -171,7 +174,8 @@ class _OverComeScreenState extends State<OverComeScreen>
                             width: MediaQuery.of(context).size.width / 4.5,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -265,7 +269,7 @@ class _OverComeScreenState extends State<OverComeScreen>
                             border: Border.all(color: Colors.black)),
                         child: const Center(
                           child: Text(
-                            'LERAN MORE',
+                            'LEARN MORE',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blue),

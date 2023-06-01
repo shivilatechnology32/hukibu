@@ -54,9 +54,10 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                         const TextSpan(
                           text: "postnatal",
                           style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         )
                       ]),
                     ),
@@ -98,8 +99,9 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                           height: MediaQuery.of(context).size.height / 18,
                           width: MediaQuery.of(context).size.width / 3,
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 2, 215, 112),
-                              borderRadius: BorderRadius.circular(20)),
+                            color: const Color.fromARGB(255, 2, 215, 112),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -152,7 +154,8 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                             width: MediaQuery.of(context).size.width / 2.8,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -174,7 +177,8 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                             width: MediaQuery.of(context).size.width / 3,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -204,8 +208,9 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                       height: MediaQuery.of(context).size.height / 12,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(99, 136, 163, 181),
-                          borderRadius: BorderRadius.circular(15)),
+                        color: const Color.fromARGB(99, 136, 163, 181),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 15.0),
                         child: Row(
@@ -218,14 +223,20 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                               //     AssetImage('assets/images/4.jpg'),
                             ),
                             20.widthBox,
-                            const Text.rich(TextSpan(children: [
+                            const Text.rich(
                               TextSpan(
-                                  text: 'Sandra Thomes\n',
-                                  style: TextStyle(
+                                children: [
+                                  TextSpan(
+                                    text: 'Sandra Thomes\n',
+                                    style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18)),
-                              TextSpan(text: 'Actor,Producer,Mom of twins')
-                            ]))
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  TextSpan(text: 'Actor,Producer,Mom of twins')
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -235,8 +246,9 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                       height: MediaQuery.of(context).size.height / 12,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(99, 136, 163, 181),
-                          borderRadius: BorderRadius.circular(15)),
+                        color: const Color.fromARGB(99, 136, 163, 181),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 15.0),
                         child: Row(
@@ -249,14 +261,20 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                               //     AssetImage('assets/images/4.jpg'),
                             ),
                             20.widthBox,
-                            const Text.rich(TextSpan(children: [
+                            const Text.rich(
                               TextSpan(
-                                  text: 'Seema Anand\n',
-                                  style: TextStyle(
+                                children: [
+                                  TextSpan(
+                                    text: 'Seema Anand\n',
+                                    style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18)),
-                              TextSpan(text: 'Parenting Expert')
-                            ]))
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  TextSpan(text: 'Parenting Expert')
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -265,16 +283,19 @@ class _TantrumTamerSceenState extends State<TantrumTamerSceen>
                     InkWell(
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (ctx) => const TantrumTamerDetails()));
+                          context,
+                          MaterialPageRoute(
+                            builder: (ctx) => const TantrumTamerDetails(),
+                          ),
+                        );
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 24,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black)),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.black),
+                        ),
                         child: const Center(
                           child: Text(
                             'LERAN MORE',

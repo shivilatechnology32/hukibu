@@ -14,7 +14,6 @@ class _CuddleScreenState extends State<CuddleScreen>
     with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    TabController tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -171,7 +170,8 @@ class _CuddleScreenState extends State<CuddleScreen>
                             width: MediaQuery.of(context).size.width / 5,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -194,15 +194,18 @@ class _CuddleScreenState extends State<CuddleScreen>
                     const Text(
                       "Experience and leran with ",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.grey),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
                     ).tr(),
                     20.heightBox,
                     Container(
                       height: MediaQuery.of(context).size.height / 12,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(99, 136, 163, 181),
-                          borderRadius: BorderRadius.circular(15)),
+                        color: const Color.fromARGB(99, 136, 163, 181),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 15.0),
                         child: Row(
@@ -211,8 +214,6 @@ class _CuddleScreenState extends State<CuddleScreen>
                             const CircleAvatar(
                               radius: 25,
                               backgroundColor: Colors.cyan,
-                              // backgroundImage:
-                              //     AssetImage('assets/images/4.jpg'),
                             ),
                             10.widthBox,
                             const Text.rich(TextSpan(children: [

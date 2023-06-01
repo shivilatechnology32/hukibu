@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hukibu/components/bottomnavigate.dart';
+import 'package:hukibu/Screen/home_screen/bottomnavigate.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:velocity_x/velocity_x.dart';
 

@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:hukibu/Screen/home_screen.dart';
+import 'package:hukibu/Screen/home_screen/home_screen.dart';
 import 'package:hukibu/Screen/my_child.dart';
 import 'package:hukibu/Screen/chat_list.dart';
 import 'package:hukibu/Screen/notes_screen.dart';

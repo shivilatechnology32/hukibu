@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "3444216bfd127af50bbe4862d8843ed44db946dd933554f0d7285e89f10e28ac"
+      sha256: "405666cd3cf0ee0a48d21ec67e65406aad2c726d9fa58840d3375e7bdcd32a07"
       url: "https://pub.dev"
     source: hosted
-    version: "50.0.0"
+    version: "60.0.0"
   _flutterfire_internals:
     dependency: transitive
     description:
@@ -21,18 +21,18 @@ packages:
     dependency: transitive
     description:
       name: analyzer
-      sha256: "68796c31f510c8455a06fed75fc97d8e5ad04d324a830322ab3efc9feb6201c1"
+      sha256: "1952250bd005bacb895a01bf1b4dc00e3ba1c526cf47dca54dfe24979c65f5b3"
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.0"
+    version: "5.12.0"
   args:
     dependency: transitive
     description:
       name: args
-      sha256: "4cab82a83ffef80b262ddedf47a0a8e56ee6fbf7fe21e6e768b02792034dd440"
+      sha256: c372bb384f273f0c2a8aaaa226dad84dc27c8519a691b888725dec59518ad53a
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.0"
+    version: "2.4.1"
   async:
     dependency: transitive
     description:
@@ -293,10 +293,10 @@ packages:
     dependency: transitive
     description:
       name: facebook_auth_desktop
-      sha256: e2a63178835b2f63f144d558394c8cfcffaaadee35205deace4f8cc28ba9a902
+      sha256: "35ff7b8c62ad37c4bc08eed7d58cf301ab8770a2f4eed46573843ae1e1a1aac3"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.8"
+    version: "0.0.9"
   fake_async:
     dependency: transitive
     description:
@@ -317,10 +317,10 @@ packages:
     dependency: transitive
     description:
       name: ffi
-      sha256: a38574032c5f1dd06c4aee541789906c12ccaab8ba01446e800d9c5b79c4a978
+      sha256: ed5337a5660c506388a9f012be0288fb38b49020ce2b45fe1f8b8323fe429f99
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   file:
     dependency: transitive
     description:
@@ -450,10 +450,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_facebook_auth
-      sha256: e74475e4d0d87f34069a42ec6e839872222ca8a65fbb506ec3329b5d595ca75b
+      sha256: "2ed18ea374919fbca4c85383957662674d23f6f3901dfbf603f8d54cab10d050"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.7"
+    version: "5.0.11"
   flutter_facebook_auth_platform_interface:
     dependency: transitive
     description:
@@ -507,14 +507,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.7"
+  flutter_screenutil:
+    dependency: "direct main"
+    description:
+      name: flutter_screenutil
+      sha256: b3e155ee4f2cf5b21a2e15182d1c49c848147ed47f62083fc9a9beccb85f59f9
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.8.2"
   flutter_secure_storage:
     dependency: transitive
     description:
       name: flutter_secure_storage
-      sha256: f2afec1f1762c040a349ea2a588e32f442da5d0db3494a52a929a97c9e550bc5
+      sha256: "98352186ee7ad3639ccc77ad7924b773ff6883076ab952437d20f18a61f0a7c5"
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.1"
+    version: "8.0.0"
   flutter_secure_storage_linux:
     dependency: transitive
     description:
@@ -527,10 +535,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_secure_storage_macos
-      sha256: ff0768a6700ea1d9620e03518e2e25eac86a8bd07ca3556e9617bfa5ace4bd00
+      sha256: "083add01847fc1c80a07a08e1ed6927e9acd9618a35e330239d4422cd2a58c50"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "3.0.0"
   flutter_secure_storage_platform_interface:
     dependency: transitive
     description:
@@ -551,10 +559,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_secure_storage_windows
-      sha256: ca89c8059cf439985aa83c59619b3674c7ef6cc2e86943d169a7369d6a69cab5
+      sha256: fc2910ec9b28d60598216c29ea763b3a96c401f0ce1d13cdf69ccb0e5c93c3ee
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.3"
+    version: "2.0.0"
   flutter_survey:
     dependency: "direct main"
     description:
@@ -589,6 +597,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      sha256: "2ba20a47c8f1f233bed775ba2dd0d3ac97b4cf32fc17731b3dfc672b06b0e92a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.6.5"
   glob:
     dependency: transitive
     description:
@@ -857,10 +873,10 @@ packages:
     dependency: transitive
     description:
       name: path_provider_windows
-      sha256: bcabbe399d4042b8ee687e17548d5d3f527255253b4a639f5f8d2094a9c2b45c
+      sha256: d3f80b32e83ec208ac95253e0cd4d298e104fbc63cb29c5c69edaed43b0c69d6
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.3"
+    version: "2.1.6"
   pinput:
     dependency: "direct main"
     description:
@@ -1130,6 +1146,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  twitter_login:
+    dependency: "direct main"
+    description:
+      name: twitter_login
+      sha256: "6995d9a7822d9d0dcd2450357527f0154129938b757b2f504471c15b378b9007"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.4.0"
   typed_data:
     dependency: transitive
     description:
@@ -1182,10 +1206,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: c9ebe7ee4ab0c2194e65d3a07d8c54c5d00bb001b76081c4a04cdb8448b59e46
+      sha256: "5a751eddf9db89b3e5f9d50c20ab8612296e4e8db69009788d6c8b060a84191c"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.3"
+    version: "4.1.4"
   xdg_directories:
     dependency: transitive
     description:
@@ -1212,4 +1236,4 @@ packages:
     version: "8.1.2"
 sdks:
   dart: ">=3.0.0-0 <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.10.0"

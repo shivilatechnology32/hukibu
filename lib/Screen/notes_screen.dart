@@ -83,17 +83,16 @@ class _NotesScreenState extends State<NotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: SfCalendar(
-        view: CalendarView.month,
-        dataSource: MeetingDataSource(_getDataSource()),
-        // by default the month appointment display mode set as Indicator, we can
-        // change the display mode as appointment using the appointment display
-        // mode property
-        monthViewSettings: const MonthViewSettings(
-            appointmentDisplayMode: MonthAppointmentDisplayMode.appointment),
+      body: SafeArea(
+        child: SfCalendar(
+          view: CalendarView.month,
+          dataSource: MeetingDataSource(_getDataSource()),
+          monthViewSettings: const MonthViewSettings(
+            appointmentDisplayMode: MonthAppointmentDisplayMode.appointment,
+          ),
+        ),
       ),
-    ));
+    );
   }
 
   List<Meeting> _getDataSource() {

@@ -10,40 +10,39 @@ class WriterScreen extends StatefulWidget {
   State<WriterScreen> createState() => _WriterScreenState();
 }
 
-class _WriterScreenState extends State<WriterScreen>
-    with TickerProviderStateMixin {
+class _WriterScreenState extends State<WriterScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    TabController tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-              height: MediaQuery.of(context).size.height / 3.3,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.purple,
-                    Colors.blue,
-                  ],
-                  begin: FractionalOffset(0.5, 0.0),
-                  end: FractionalOffset(0.99, 0.0),
-                ),
+            height: MediaQuery.of(context).size.height / 3.3,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.purple,
+                  Colors.blue,
+                ],
+                begin: FractionalOffset(0.5, 0.0),
+                end: FractionalOffset(0.99, 0.0),
               ),
-              child: Stack(
-                children: [
-                  Image.asset(
-                    'assets/images/math-teacher.jpg',
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 88.0, left: 10),
-                    child: Text.rich(
-                      TextSpan(children: [
+            ),
+            child: Stack(
+              children: [
+                Image.asset(
+                  'assets/images/math-teacher.jpg',
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  height: double.infinity,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 88.0, left: 10),
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
                         TextSpan(
                           text: "cuddle".tr(),
                           style: const TextStyle(
@@ -54,15 +53,18 @@ class _WriterScreenState extends State<WriterScreen>
                         const TextSpan(
                           text: "postnatal",
                           style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         )
-                      ]),
+                      ],
                     ),
                   ),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
           Expanded(
             child: Container(
               color: const Color.fromARGB(255, 242, 238, 238),
@@ -73,8 +75,10 @@ class _WriterScreenState extends State<WriterScreen>
                   children: [
                     const Text(
                       "Writing Without Tears by Thara Shenoy",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ).tr(),
                     30.heightBox,
                     const Text(
@@ -95,8 +99,9 @@ class _WriterScreenState extends State<WriterScreen>
                           height: MediaQuery.of(context).size.height / 18,
                           width: MediaQuery.of(context).size.width / 3,
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 2, 215, 112),
-                              borderRadius: BorderRadius.circular(20)),
+                            color: const Color.fromARGB(255, 2, 215, 112),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -114,7 +119,9 @@ class _WriterScreenState extends State<WriterScreen>
                     const Text(
                       "WHAT YOU GET",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.grey),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
                     ).tr(),
                     20.heightBox,
                     SingleChildScrollView(
@@ -127,7 +134,8 @@ class _WriterScreenState extends State<WriterScreen>
                             width: MediaQuery.of(context).size.width / 3,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -149,7 +157,8 @@ class _WriterScreenState extends State<WriterScreen>
                             width: MediaQuery.of(context).size.width / 2.5,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -171,7 +180,8 @@ class _WriterScreenState extends State<WriterScreen>
                             width: MediaQuery.of(context).size.width / 3.5,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: const Color.fromARGB(255, 94, 92, 92)),
+                                color: const Color.fromARGB(255, 94, 92, 92),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -194,35 +204,43 @@ class _WriterScreenState extends State<WriterScreen>
                     const Text(
                       "EXPERIENCE AND LEARN WITH ",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.grey),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
                     ).tr(),
                     20.heightBox,
                     Container(
                       height: MediaQuery.of(context).size.height / 12,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(99, 136, 163, 181),
-                          borderRadius: BorderRadius.circular(15)),
+                        color: const Color.fromARGB(99, 136, 163, 181),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 15.0),
                         child: Row(
-                          //mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             const CircleAvatar(
                               radius: 25,
                               backgroundColor: Colors.cyan,
-                              // backgroundImage:
-                              //     AssetImage('assets/images/4.jpg'),
                             ),
                             20.widthBox,
-                            const Text.rich(TextSpan(children: [
+                            const Text.rich(
                               TextSpan(
-                                  text: 'Thara Shenoy\n',
-                                  style: TextStyle(
+                                children: [
+                                  TextSpan(
+                                    text: 'Thara Shenoy\n',
+                                    style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18)),
-                              TextSpan(text: 'Pediatric Occupational Therapist')
-                            ]))
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: 'Pediatric Occupational Therapist',
+                                  )
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -231,22 +249,26 @@ class _WriterScreenState extends State<WriterScreen>
                     InkWell(
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (ctx) => const OverComeDetails()));
+                          context,
+                          MaterialPageRoute(
+                            builder: (ctx) => const OverComeDetails(),
+                          ),
+                        );
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 24,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black)),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.black),
+                        ),
                         child: const Center(
                           child: Text(
                             'LERAN MORE',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
+                            ),
                           ),
                         ),
                       ),
@@ -278,7 +300,9 @@ class _WriterScreenState extends State<WriterScreen>
                                     const Text(
                                       'Day 1-Self\n  Regular',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                      ),
                                     )
                                   ],
                                 ),
@@ -307,7 +331,9 @@ class _WriterScreenState extends State<WriterScreen>
                                       child: Text(
                                         'Day 1-30 mint for yourself',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        ),
                                       ),
                                     )
                                   ],
@@ -340,7 +366,9 @@ class _WriterScreenState extends State<WriterScreen>
                                     const Text(
                                       'Bounes-Mind \n Mapping \nTechniques',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                      ),
                                     )
                                   ],
                                 ),
@@ -366,7 +394,9 @@ class _WriterScreenState extends State<WriterScreen>
                                     const Text(
                                       'Day 2-Felling \n   words',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                      ),
                                     )
                                   ],
                                 ),
@@ -396,78 +426,16 @@ class _WriterScreenState extends State<WriterScreen>
                                     ),
                                     10.heightBox,
                                     const Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 8.0, left: 15),
+                                      padding: EdgeInsets.only(
+                                        top: 8.0,
+                                        left: 15,
+                                      ),
                                       child: Text(
                                         'Day 2-Look into thier Eyes',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: MediaQuery.of(context).size.height / 5,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(195, 16, 89, 192),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 58.0),
-                                child: Column(
-                                  children: [
-                                    const Icon(
-                                      Icons.calendar_today,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                    10.heightBox,
-                                    const Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 8.0, left: 15),
-                                      child: Text(
-                                        'Days 3-Delayed Gratification',
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        15.heightBox,
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height / 5,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(195, 16, 89, 192),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 58.0),
-                                child: Column(
-                                  children: [
-                                    const Icon(
-                                      Icons.calendar_today,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                    10.heightBox,
-                                    const Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 8.0, left: 15),
-                                      child: Text(
-                                        'Day 3-Habit\n change',
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        ),
                                       ),
                                     )
                                   ],
@@ -493,11 +461,15 @@ class _WriterScreenState extends State<WriterScreen>
                                     10.heightBox,
                                     const Padding(
                                       padding: EdgeInsets.only(
-                                          top: 8.0, left: 10, right: 10),
+                                        top: 8.0,
+                                        left: 15,
+                                      ),
                                       child: Text(
-                                        'Days 4-Non Verbal \n Cues',
+                                        'Days 3-Delayed Gratification',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        ),
                                       ),
                                     )
                                   ],
@@ -528,12 +500,16 @@ class _WriterScreenState extends State<WriterScreen>
                                     ),
                                     10.heightBox,
                                     const Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 8.0, left: 15),
+                                      padding: EdgeInsets.only(
+                                        top: 8.0,
+                                        left: 15,
+                                      ),
                                       child: Text(
-                                        '    Day 4 -\nNotification',
+                                        'Day 3-Habit\n change',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        ),
                                       ),
                                     )
                                   ],
@@ -558,12 +534,91 @@ class _WriterScreenState extends State<WriterScreen>
                                     ),
                                     10.heightBox,
                                     const Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 8.0, left: 15),
+                                      padding: EdgeInsets.only(
+                                        top: 8.0,
+                                        left: 10,
+                                        right: 10,
+                                      ),
+                                      child: Text(
+                                        'Days 4-Non Verbal \n Cues',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        15.heightBox,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              height: MediaQuery.of(context).size.height / 5,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(195, 16, 89, 192),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 58.0),
+                                child: Column(
+                                  children: [
+                                    const Icon(
+                                      Icons.calendar_today,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    10.heightBox,
+                                    const Padding(
+                                      padding: EdgeInsets.only(
+                                        top: 8.0,
+                                        left: 15,
+                                      ),
+                                      child: Text(
+                                        '    Day 4 -\nNotification',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height / 5,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(195, 16, 89, 192),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 58.0),
+                                child: Column(
+                                  children: [
+                                    const Icon(
+                                      Icons.calendar_today,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    10.heightBox,
+                                    const Padding(
+                                      padding: EdgeInsets.only(
+                                        top: 8.0,
+                                        left: 15,
+                                      ),
                                       child: Text(
                                         'Days 5-Positive \n Reinforcement',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        ),
                                       ),
                                     )
                                   ],
@@ -598,7 +653,9 @@ class _WriterScreenState extends State<WriterScreen>
                                     child: Text(
                                       'Days 5 - Nothing \n    Time',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                      ),
                                     ),
                                   )
                                 ],
@@ -618,4 +675,3 @@ class _WriterScreenState extends State<WriterScreen>
     );
   }
 }
-//
