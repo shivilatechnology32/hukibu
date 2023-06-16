@@ -43,6 +43,7 @@ class HomeController extends GetxController {
 
     }
   }
+
   Future<void> changeLocale(BuildContext context) async {
     if (isSwitched.value) {
       context.setLocale(const Locale('en', 'US'));
